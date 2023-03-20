@@ -2,7 +2,6 @@ import React from "react";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const handleHello = () => {
-        console.log(c);
         // Bot response
         const botMessage = createChatBotMessage("Hello! Nice to meet you");
 
@@ -23,6 +22,33 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     };
 
+    const handleTime = () => {
+        let hours = new Date().getHours(),
+            minutes = new Date().getMinutes();
+
+        const botMessage = createChatBotMessage(`It's ${hours}:${minutes}`);
+
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+    };
+
+    const handleDescribeBot = () => {
+        const botMessage = createChatBotMessage(`I'm a bot here to help you, I was created by Fredrik Oseberg and used again by Loick for his personal React project!`);
+
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+    }
+
+    const handleUserLocation = () => {
+        // Access if user accepts to its location
+    }
+
+    // Where user is?
+
     return (
         <div>
             {React.Children.map(children, (child) => {
@@ -30,6 +56,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                     actions: {
                         handleHello,
                         handleDog,
+                        handleTime,
+                        handleDescribeBot,
+                        handleUserLocation
                     },
                 });
             })}
