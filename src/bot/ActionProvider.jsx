@@ -2,7 +2,7 @@ import React from "react";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const handleHello = () => {
-        // console.log(c);
+        console.log(c);
         // Bot response
         const botMessage = createChatBotMessage("Hello! Nice to meet you");
 
