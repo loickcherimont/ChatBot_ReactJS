@@ -1,0 +1,1 @@
+- Show user position on a map if OK
