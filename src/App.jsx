@@ -1,7 +1,7 @@
 import React from "react";
 // Chat bot dependencies
 import Chatbot from "react-chatbot-kit";
-import "react-chatbot-kit/build/main.css"
+import "react-chatbot-kit/build/main.css";
 // Chat bot initializer
 import config from "./bot/config";
 import MessageParser from "./bot/MessageParser";
@@ -14,6 +14,7 @@ function App() {
     <div>
       <Chatbot 
         config={config}
+        headerText="Wizard Lowbot 🤖"
         messageParser={MessageParser}
         actionProvider={ActionProvider}
       />
