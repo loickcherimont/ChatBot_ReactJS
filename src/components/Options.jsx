@@ -1,15 +1,15 @@
 import React from "react";
 
 const Options = (props) => {
-    console.log(props);
+    // Possibilities for ChatBot
     const options = [
         {
-            text: "Who are you?",
+            text: "Who am I?",
             handler: props.actionProvider.handleDescribeBot,
             id: 1,
         },
         {
-            text: "Where am I?",
+            text: "User location",
             handler: props.actionProvider.handleUserLocation,
             id: 2,
         }
