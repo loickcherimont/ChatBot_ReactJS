@@ -5,7 +5,7 @@ const botName = "LowBot";
 
 const config = {
     // Bot first messages
-    initialMessages: [createChatBotMessage(`Hi, I'm ${botName} here to help you!`, {
+    initialMessages: [createChatBotMessage(`Hi, I'm ${botName}`, {
         widget: "options",
     })],
     botName: botName,
