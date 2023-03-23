@@ -1,12 +1,15 @@
-## 2023-03-23 
-- Perform `handleDescribeBot` : Write how to use the chatbot and its possibilities.
-After that bot (re)ask the main options 
-
-## 2023-03-24
-- Add a last option
-
-## 2023-03-25
-- Error handling
-
 ## 2023-03-28
-- ChatBot style
+**ChatBot App style**
+- Chatbot Name : Prototype Lowbot
+- Icons : 
+    - Use a robot icon
+    - Check again user icon before replace it
+- OUT of CHATBOX : #353839
+    - title H1 / Chat we Lowbot!
+- IN CHATBOX :
+    - Lowbot : #02908b
+    - User : #0978f6 OR #00b0ff
+- CHATBOX :
+    - AT THE MIDDLE
+    - SQUARE BIGGER
+
