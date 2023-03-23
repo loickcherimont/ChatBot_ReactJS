@@ -7,17 +7,25 @@ const MessageParser = ( { children, actions }) => {
         let regex = new RegExp("hello", "i");
         if(regex.test(message)) {
             actions.handleHello();
-        }
-
-        // Show user a random picture standing for a dog
-        regex = new RegExp("dog", "i");
-        if (regex.test(message)) {
-            actions.handleDog();
+            return;
         }
 
         regex = new RegExp("time", "i");
         if(regex.test(message)) {
             actions.handleTime();
+            return;
+
+        }
+
+        regex = new RegExp("bye", "i");
+        if(regex.test(message)) {
+            actions.handleBye();
+            return;
+
+        }
+
+        else {
+            actions.handleError();
         }
     };
 
