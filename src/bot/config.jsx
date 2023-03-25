@@ -1,5 +1,7 @@
+import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
-import Options from "../components/Options";
+import BotAvatar from "../components/BotAvatar/BotAvatar";
+import Options from "../components/Options/Options";
 
 const botName = "LowBot";
 
@@ -9,28 +11,9 @@ const config = {
         widget: "options",
     })],
     botName: botName,
-    // Apply your own styles
-    customStyles: {
-        botMessageBox: {
-            backgroundColor: '#376B7E',
-        },
-        chatButton: {
-            backgroundColor: '#5ccc9d',
-        },
-    },
     customComponents: {
-        // botAvatar: (props) => <MyAvatar {...props} />
+        botAvatar: (props) => <BotAvatar {...props}/>
     },
-    state: {
-        gist: "",
-        infoBox: "",
-    },
-    // widgets: [
-    //     {
-    //         widgetName: "dogPicture",
-    //         widgetFunc: (props) => < DogPicture {...props} />,
-    //     },
-    // ],
     widgets : [
         {
             widgetName: "options",
