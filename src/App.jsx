@@ -6,15 +6,18 @@ import "react-chatbot-kit/build/main.css";
 import config from "./bot/config";
 import MessageParser from "./bot/MessageParser";
 import ActionProvider from "./bot/ActionProvider";
+import "./App.css";
 
 
 
 function App() {
   return (
-    <div>
-      <Chatbot 
+    <div className="wrapper">
+      <h1 className="wrapper-title">Chat With Lowbot</h1>
+      <Chatbot
+        className="wrapper-chatbot"
         config={config}
-        headerText="Wizard Lowbot 🤖"
+        headerText="Wizard Lowbot"
         messageParser={MessageParser}
         actionProvider={ActionProvider}
       />
