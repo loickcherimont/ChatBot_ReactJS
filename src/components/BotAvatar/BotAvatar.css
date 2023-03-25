@@ -1,0 +1,9 @@
+.lowbot-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 1.5em;
+    background-color: #2898ec;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+}
