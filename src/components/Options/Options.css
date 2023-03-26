@@ -2,3 +2,14 @@
     display: flex;
     justify-content: space-around;
 }
+
+.option-button {
+    background-color: #0978f6;
+    color: #fff;
+    transition: all 500ms ease-out;
+}
+
+.option-button:hover {
+    background-color: #005792;
+    color: #d1d1d1;
+}

@@ -1,18 +1,22 @@
 import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 import BotAvatar from "../components/BotAvatar/BotAvatar";
+import BotChatMessage from "../components/BotChatMessage/BotChatMessage";
+// import ChatButton from "../components/ChatButton/ChatButton";
+import Header from "../components/Header/Header";
 import Options from "../components/Options/Options";
-
-const botName = "LowBot";
+import UserChatMessage from "../components/UserChatMessage/UserChatMessage";
 
 const config = {
     // Bot first messages
-    initialMessages: [createChatBotMessage(`Hi, I'm ${botName}`, {
+    initialMessages: [createChatBotMessage(`Hi, there, what can I do for you?`, {
         widget: "options",
     })],
-    botName: botName,
     customComponents: {
-        botAvatar: (props) => <BotAvatar {...props}/>
+        header: (props) => <Header {...props}/>,
+        botAvatar: (props) => <BotAvatar {...props}/>,
+        userChatMessage: (props) => <UserChatMessage {...props}/>,
+        botChatMessage: (props) => <BotChatMessage {...props} />,
     },
     widgets : [
         {

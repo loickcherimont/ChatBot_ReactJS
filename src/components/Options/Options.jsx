@@ -1,5 +1,5 @@
 import React from "react";
-import "./Options.css"
+import "./Options.css";
 
 const Options = (props) => {
     // Possibilities for ChatBot

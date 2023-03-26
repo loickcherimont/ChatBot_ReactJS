@@ -2,8 +2,9 @@
     width: 35px;
     height: 35px;
     font-size: 1.5em;
-    background-color: #2898ec;
+    background-image: linear-gradient(45deg, #8a8a8a, #a1a1a1, #c1c1c1);
     color: #fff;
     border-radius: 50%;
     padding: 5px;
+    margin-left: 10px;
 }
