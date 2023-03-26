@@ -1,4 +1,5 @@
 import React from "react";
+import { getEnglishTime } from "../functions/utils.js";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
@@ -25,20 +26,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
     // Response to "time"
     const handleTime = () => {
-
-        // Transform time in 24h format to 12h format
-        const getEnglishTime = () => {
-
-            let date = new Date();
-            let hours = date.getHours(), 
-            minutes = date.getMinutes();
-
-            let moment = (hours < 12) ? "AM":"PM";
-
-            return `${hours % 12}:${minutes < 10 ? "0"+minutes : minutes} ${moment}`
-        }
-        
-
         const botMessage = createChatBotMessage(`It's ${getEnglishTime()}`, {widget: "options"});
 
         setState((prev) => ({
@@ -49,7 +36,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
     // Indicate user the possibilities
     const handleDescribeBot = () => {
-        const botMessage = createChatBotMessage(`I'm Lowbot 🤖, a prototype of chatbot reused by Loick for his personal React project? Try ask me "time", "hello", "bye". Sorry for my current options, I'm a ChatBot V1 for my reuser! Later I will be able to help you really in a specific area ^^! It's a promise`, {widget: "options"});
+        const botMessage = createChatBotMessage(`I'm Lowbot, a prototype of chatbot reused by Loick for his personal React project? Try ask me "time", "hello", "bye". Sorry for my current options, I'm a ChatBot V1 for my reuser! Later I will be able to help you really in a specific area ^^! It's a promise`, {widget: "options"});
 
         setState((prev) => ({
             ...prev,
@@ -62,14 +49,13 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
         const authorize = (position) => {
             const { latitude, longitude } = position.coords;
-            console.log(position);
+
             const botMessage = createChatBotMessage(`Latitude: ${latitude}\nLongitude: ${longitude}, try this data on a Map. Close this tab and run it again if you wanted to DENY!`, {widget: "options"});
             
             setState((prev) => ({
                 ...prev,
                 messages: [...prev.messages, botMessage],
             }));
-            navigator.geolocation.clearWatch(id);
         }
 
         const deny = (positionError) => {
