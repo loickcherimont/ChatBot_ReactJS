@@ -12,8 +12,6 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="wrapper">
-      <h1 className="wrapper-title">Chat With Lowbot</h1>
       <Chatbot
         className="wrapper-chatbot"
         config={config}
@@ -21,7 +19,6 @@ function App() {
         messageParser={MessageParser}
         actionProvider={ActionProvider}
       />
-    </div>
   )
 }
 
