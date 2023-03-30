@@ -1,8 +1,9 @@
 import React from "react";
-// import { createClientMessage } from "react-chatbot-kit";
 
-const MessageParser = ( { children, actions }) => {
+const MessageParser = ( { children, actions }) => { 
+
     const parse = (message) => {
+
         // Response to user's greetings
         let regex = new RegExp("hello", "i");
         if(regex.test(message)) {
@@ -10,6 +11,8 @@ const MessageParser = ( { children, actions }) => {
             return;
         }
 
+        // Response to user
+        // if time asked
         regex = new RegExp("time", "i");
         if(regex.test(message)) {
             actions.handleTime();
@@ -17,6 +20,7 @@ const MessageParser = ( { children, actions }) => {
 
         }
 
+        // Response if user say bye
         regex = new RegExp("bye", "i");
         if(regex.test(message)) {
             actions.handleBye();
@@ -26,6 +30,7 @@ const MessageParser = ( { children, actions }) => {
 
         else {
             actions.handleError();
+            return;
         }
     };
 
