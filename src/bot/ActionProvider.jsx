@@ -5,68 +5,59 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
     // Response to "hello"
     const handleHello = () => {
-        /* Bot response */
-        const botMessage = createChatBotMessage("Hello ^^!\n What can I do for you today", {widget: "options"});
 
-        setState((prev) => ({
-            ...prev,
-            messages: [...prev.messages, botMessage],
-        }));
+        const botMessage = createChatBotMessage("Hello ^^!\n What can I do for you today", { widget: "options" });
+
+
+        displayMessage(botMessage);
     };
 
     // Response to "bye"
     const handleBye = () => {
         const botMessage = createChatBotMessage("Sad to see you leave 😥, but all better things must finish now or later. Good Bye! 😊!");
 
-        setState((prev) => ({
-            ...prev,
-            messages: [...prev.messages, botMessage],
-        }));
+
+        displayMessage(botMessage);
+
     }
 
     // Response to "time"
     const handleTime = () => {
-        const botMessage = createChatBotMessage(`It's ${getEnglishTime()}`, {widget: "options"});
+        const botMessage = createChatBotMessage(`It's ${getEnglishTime()}`, { widget: "options" });
 
-        setState((prev) => ({
-            ...prev,
-            messages: [...prev.messages, botMessage],
-        }));
+        displayMessage(botMessage);
     }
 
     // Indicate user the possibilities
     const handleDescribeBot = () => {
-        const botMessage = createChatBotMessage(`I'm Lowbot, a prototype of chatbot reused by Loick for his personal React project? Try ask me "time", "hello", "bye". Sorry for my current options, I'm a ChatBot V1 for my reuser! Later I will be able to help you really in a specific area ^^! It's a promise`, {widget: "options"});
+        const botMessage = createChatBotMessage(`I'm Lowbot, a prototype of chatbot reused by Loick for his personal React project? Try ask me "time", "hello", "bye". Sorry for my current options, I'm a ChatBot V1 for my reuser! Later I will be able to help you really in a specific area ^^! It's a promise`, { widget: "options" });
 
-        setState((prev) => ({
-            ...prev,
-            messages: [...prev.messages, botMessage],
-        }));
+
+        displayMessage(botMessage);
+
     }
 
     // Give client current location (latitude, longitude)
+    // if user agree
     const handleUserLocation = () => {
 
         const authorize = (position) => {
             const { latitude, longitude } = position.coords;
 
-            const botMessage = createChatBotMessage(`Latitude: ${latitude}\nLongitude: ${longitude}, try this data on a Map. Close this tab and run it again if you wanted to DENY!`, {widget: "options"});
-            
-            setState((prev) => ({
-                ...prev,
-                messages: [...prev.messages, botMessage],
-            }));
+            const botMessage = createChatBotMessage(`Latitude: ${latitude}\nLongitude: ${longitude}, try this data on a Map. Close this tab and run it again if you wanted to DENY!`, { widget: "options" });
+
+
+            displayMessage(botMessage);
+
         }
 
-        const deny = (positionError) => {
-            console.log(positionError);
-            
-            const botMessage = createChatBotMessage("OK! I respect your choice! Close this tab and run it again if you wanted to ACCEPT!", {widget: "options"});
+        const deny = () => {
 
-            setState((prev) => ({
-                ...prev,
-                messages: [...prev.messages, botMessage],
-            }));
+            const botMessage = createChatBotMessage("OK! I respect your choice! Close this tab and run it again if you wanted to ACCEPT!", { widget: "options" });
+
+
+            displayMessage(botMessage);
+
         };
 
         navigator.geolocation.getCurrentPosition(authorize, deny);
@@ -75,9 +66,19 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     // Process undefined requests
+    // Empty ones too
     const handleError = () => {
-        const botMessage = createChatBotMessage(`Sorry, this request is out of my capacities 🌕! Instead try "time", say "hello" or "bye"`, {widget: "options"});
+        const botMessage = createChatBotMessage(`Sorry, this request is out of my capacities 🌕! Instead try "time", say "hello", "bye" or select one of these options`, { widget: "options" });
 
+        console.log(e);
+
+
+        displayMessage(botMessage);
+
+    }
+
+    // Display messages : previous and new ones
+    function displayMessage(botMessage) {
         setState((prev) => ({
             ...prev,
             messages: [...prev.messages, botMessage],
