@@ -2,7 +2,6 @@ import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 import BotAvatar from "../components/BotAvatar/BotAvatar";
 import BotChatMessage from "../components/BotChatMessage/BotChatMessage";
-// import ChatButton from "../components/ChatButton/ChatButton";
 import Header from "../components/Header/Header";
 import Options from "../components/Options/Options";
 import UserChatMessage from "../components/UserChatMessage/UserChatMessage";
