@@ -1,5 +1,12 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: "Source Sans Pro",
+    url("./assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf") format("TrueType");
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -68,3 +75,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Custom */
+
+Hide native scrollbar
+* { 
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar { 
+  display: none; /* For Chrome, Edge, etc */
+}
+
+
