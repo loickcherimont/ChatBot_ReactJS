@@ -70,8 +70,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const handleError = () => {
         const botMessage = createChatBotMessage(`Sorry, this request is out of my capacities 🌕! Instead try "time", say "hello", "bye" or select one of these options`, { widget: "options" });
 
-        console.log(e);
-
 
         displayMessage(botMessage);
 
