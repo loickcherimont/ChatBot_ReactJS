@@ -1,5 +1,6 @@
 import React from "react";
 import { getEnglishTime } from "../functions/utils.js";
+import { CurrentLocation } from "../components/CurrentLocation.jsx";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
@@ -44,7 +45,10 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         const authorize = (position) => {
             const { latitude, longitude } = position.coords;
 
-            const botMessage = createChatBotMessage(`Latitude: ${latitude}\nLongitude: ${longitude}, try this data on a Map. Close this tab and run it again if you wanted to DENY!`, { widget: "options" });
+            /**
+             * Display a link to Maps
+             * That give the user him/her current location */ 
+            const botMessage = createChatBotMessage(<CurrentLocation latitude={latitude} longitude={longitude} />, {widget: 'options'})
 
 
             displayMessage(botMessage);

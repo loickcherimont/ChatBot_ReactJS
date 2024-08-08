@@ -5,6 +5,7 @@ import BotChatMessage from "../components/BotChatMessage/BotChatMessage";
 import Header from "../components/Header/Header";
 import Options from "../components/Options/Options";
 import UserChatMessage from "../components/UserChatMessage/UserChatMessage";
+import { CurrentLocation } from "../components/CurrentLocation";
 
 const config = {
     // Bot first messages
