@@ -1,18 +1,30 @@
 import React from "react";
 
+/**
+ * Returns the response corresponding to the action
+ * 
+ * @param children
+ * @param actions 
+ * @returns {HTMLDivElement} Response corresponding to the action
+ */
 const MessageParser = ( { children, actions }) => { 
 
     const parse = (message) => {
 
-        // Response to user's greetings
+        /**
+         * Response
+         * For greetings
+         */
         let regex = new RegExp("hello", "i");
         if(regex.test(message)) {
             actions.handleHello();
             return;
         }
 
-        // Response to user
-        // if time asked
+        /**
+         * Response
+         * For time
+         */
         regex = new RegExp("time", "i");
         if(regex.test(message)) {
             actions.handleTime();
@@ -20,7 +32,10 @@ const MessageParser = ( { children, actions }) => {
 
         }
 
-        // Response if user say bye
+        /**
+         * Response 
+         * for bye
+         */
         regex = new RegExp("bye", "i");
         if(regex.test(message)) {
             actions.handleBye();
@@ -28,6 +43,10 @@ const MessageParser = ( { children, actions }) => {
 
         }
 
+        /**
+         * Response
+         * For not valid request
+         */
         else {
             actions.handleError();
             return;

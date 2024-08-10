@@ -77,7 +77,7 @@ button:focus-visible {
 
 /* Custom */
 
-Hide native scrollbar
+/* Hide native scrollbar */
 * { 
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none;

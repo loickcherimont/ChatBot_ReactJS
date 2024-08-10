@@ -1,11 +1,19 @@
 import React from "react";
-// Chat bot dependencies
+/**
+ * Import all dependencies
+ * Specific to use chatbot
+ */
 import Chatbot from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
-// Chat bot initializer
+
+/**
+ * Import all initializers
+ * Default components for chatbot
+ */
 import config from "./bot/config";
 import MessageParser from "./bot/MessageParser";
 import ActionProvider from "./bot/ActionProvider";
+
 import "./App.css";
 
 
