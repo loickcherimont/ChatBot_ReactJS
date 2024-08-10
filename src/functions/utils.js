@@ -1,4 +1,8 @@
-// Transform time in 24h format to 12h format
+/**
+ * Returns time in 12h format
+ * 
+ * @returns {string} Hour in English format
+ */
 export const getEnglishTime = () => {
 
     let date = new Date();

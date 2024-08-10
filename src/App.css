@@ -41,7 +41,6 @@
   color: #888;
 }
 
-/** August 6 2024 */
 .react-chatbot-kit-chat-input-form {
   position: absolute;
 }
@@ -52,6 +51,10 @@
 }
 
 /** For tablet and phones */
+/**
+ * Response design
+ * For tablet and smartphones
+ */
 @media screen and (max-width: 768px) {
   .react-chatbot-kit-chat-inner-container {
     position: relative;
