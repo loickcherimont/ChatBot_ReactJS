@@ -7,7 +7,6 @@ import Options from "../components/Options/Options";
 import UserChatMessage from "../components/UserChatMessage/UserChatMessage";
 
 const config = {
-    // Bot first messages
     initialMessages: [createChatBotMessage(`Hi, there, what can I do for you?`, {
         widget: "options",
     })],

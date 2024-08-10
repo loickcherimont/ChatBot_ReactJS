@@ -1,8 +1,13 @@
 import React from "react";
 import "./Options.css";
 
+/**
+ * Returns all possibilities with the bot
+ * 
+ * @param props 
+ * @returns {HTMLDivElement} All actions possible with the bot 
+ */
 const Options = (props) => {
-    // Possibilities for ChatBot
     const options = [
         {
             text: "Who am I?",

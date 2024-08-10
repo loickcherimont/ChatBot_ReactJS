@@ -1,8 +1,8 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
 .logo {
@@ -40,3 +40,40 @@
 .read-the-docs {
   color: #888;
 }
+
+.react-chatbot-kit-chat-input-form {
+  position: absolute;
+}
+
+.react-chatbot-kit-chat-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/** For tablet and phones */
+/**
+ * Response design
+ * For tablet and smartphones
+ */
+@media screen and (max-width: 768px) {
+  .react-chatbot-kit-chat-inner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .react-chatbot-kit-chat-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    
+  }
+
+  .react-chatbot-kit-chat-input-form {
+    position: static;
+  }
+}
+
