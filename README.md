@@ -19,7 +19,7 @@ A chatbot using ReactJS and react-chatbot-kit library made by @github.com/Fredri
 1. Open a terminal and run these commands :
 
 ```bash
-git clone git@github:loickcherimont/ChatBot_ReactJS.git
+git clone git@github.com:loickcherimont/ChatBot_ReactJS.git
 cd ChatBot_ReactJS
 ```
 
